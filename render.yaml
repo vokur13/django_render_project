@@ -1,7 +1,7 @@
 databases:
-  - name: django-render-project
+  - name: postgres
     databaseName: django-render-project
-    user: django-render-project
+    user: postgres
 
 services:
   - type: web
