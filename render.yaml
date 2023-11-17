@@ -1,0 +1,20 @@
+databases:
+  - name: django-render-project
+    databaseName: django-render-project
+    user: django-render-project
+
+services:
+  - type: web
+    name: django-render-project
+    runtime: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn django-render-project.wsgi:application"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: django-render-project
+          property: connectionString
+      - key: SECRET_KEY
+        generateValue: true
+      - key: WEB_CONCURRENCY
+        value: 4
