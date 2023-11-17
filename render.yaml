@@ -1,7 +1,7 @@
 databases:
-  - name: postgres
-    databaseName: django-render-project
-    user: postgres
+  - name: django-render-project
+    databaseName: django_dbname
+    user: vokur
 
 services:
   - type: web
